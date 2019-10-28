@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -21,11 +21,11 @@ public class VuController {
 	
 	static List<Gymnases> gm= new ArrayList<>();
 	
-	 @ResponseBody
-	@RequestMapping("/index")
+	
+	@GetMapping("/home")
 	public String gemnasses() {
 		gm=gymnasesRepository.findAll();
 		System.out.println(gm);
-		return "index";
+		return "home";
 	}
 }
