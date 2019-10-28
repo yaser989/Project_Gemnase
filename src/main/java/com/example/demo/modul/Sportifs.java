@@ -1,112 +1,110 @@
 package com.example.demo.modul;
 
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 @Document(collection = "Sportifs")
 public class Sportifs {
 	
-	@Id
-    private Long IdSportif;
+	@Field(value = "IdSportif")
+    private Long idSportif;
 	
 	@Field(value = "Nom")
-	private String Nom ;
+	private String nom ;
 	
 	@Field(value = "Prenom")
-	private String Prenom;
+	private String prenom;
 	
 	@Field(value = "Sexe")
-	private String Sexe;
+	private String sexe;
 	
 	@Field(value = "Age")
-	private int Age;
+	private int age;
 	
-	@Field(value = "sport")
+	@Field(value = "Sport")
 	private Sports sport;
 	
 	@Field(value = "IdSportifConseiller")
-	private Long IdSportifConseiller;
+	private Long idSportifConseiller;
 
 	public Sportifs() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Sportifs(Long idSportif, String nom, String prenom, String sexe, int age, Sports sport,
 			Long idSportifConseiller) {
 		super();
-		IdSportif = idSportif;
-		Nom = nom;
-		Prenom = prenom;
-		Sexe = sexe;
-		Age = age;
+		this.idSportif = idSportif;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.sexe = sexe;
+		this.age = age;
 		this.sport = sport;
-		IdSportifConseiller = idSportifConseiller;
+		this.idSportifConseiller = idSportifConseiller;
 	}
 
 	public Long getIdSportif() {
-		return IdSportif;
-	}
-
-	public void setIdSportif(Long idSportif) {
-		IdSportif = idSportif;
+		return idSportif;
 	}
 
 	public String getNom() {
-		return Nom;
-	}
-
-	public void setNom(String nom) {
-		Nom = nom;
+		return nom;
 	}
 
 	public String getPrenom() {
-		return Prenom;
-	}
-
-	public void setPrenom(String prenom) {
-		Prenom = prenom;
+		return prenom;
 	}
 
 	public String getSexe() {
-		return Sexe;
-	}
-
-	public void setSexe(String sexe) {
-		Sexe = sexe;
+		return sexe;
 	}
 
 	public int getAge() {
-		return Age;
-	}
-
-	public void setAge(int age) {
-		Age = age;
+		return age;
 	}
 
 	public Sports getSport() {
 		return sport;
 	}
 
+	public Long getIdSportifConseiller() {
+		return idSportifConseiller;
+	}
+
+	public void setIdSportif(Long idSportif) {
+		this.idSportif = idSportif;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+
+	public void setSexe(String sexe) {
+		this.sexe = sexe;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
 	public void setSport(Sports sport) {
 		this.sport = sport;
 	}
 
-	public Long getIdSportifConseiller() {
-		return IdSportifConseiller;
-	}
-
 	public void setIdSportifConseiller(Long idSportifConseiller) {
-		IdSportifConseiller = idSportifConseiller;
+		this.idSportifConseiller = idSportifConseiller;
 	}
 
 	@Override
 	public String toString() {
-		return "Sportifs [IdSportif=" + IdSportif + ", Nom=" + Nom + ", Prenom=" + Prenom + ", Sexe=" + Sexe + ", Age="
-				+ Age + ", sport=" + sport + ", IdSportifConseiller=" + IdSportifConseiller + "]";
+		return "Sportifs [idSportif=" + idSportif + ", nom=" + nom + ", prenom=" + prenom + ", sexe=" + sexe + ", age="
+				+ age + ", sport=" + sport + ", idSportifConseiller=" + idSportifConseiller + "]";
 	}
-	
+
 	
 
 }

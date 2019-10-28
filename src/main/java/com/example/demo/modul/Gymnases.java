@@ -2,89 +2,88 @@ package com.example.demo.modul;
 
 import java.util.List;
 
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 @Document(collection = "Gymnases")
 public class Gymnases {
 
-	
-    private Long IdGymnase;
-	
+	@Field(value = "IdGymnase")
+	private Long idGymnase;
+
 	@Field(value = "NomGymnase")
-	private String NomGymnase;
-	
+	private String nomGymnase;
+
 	@Field(value = "Adresse")
-	private String Adresse;
-	
+	private String adresse;
+
 	@Field(value = "Ville")
-	private String Ville;
-	
-	@Field(value = "surFaceVille")
-	private int Surface;
-	
-	@Field(value = "seances")
+	private String ville;
+
+	@Field(value = "Surface")
+	private Double surface;
+
+	@Field(value = "Seances")
 	private List<Seances> seances;
+
+	public Gymnases(Long idGymnase, String nomGymnase, String adresse, String ville, Double surface,
+			List<Seances> seances) {
+		super();
+		this.idGymnase = idGymnase;
+		this.nomGymnase = nomGymnase;
+		this.adresse = adresse;
+		this.ville = ville;
+		this.surface = surface;
+		this.seances = seances;
+	}
 
 	public Gymnases() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Gymnases(Long idGymnase, String nomGymnase, String adresse, String ville, int surface,
-			List<Seances> seances) {
-		super();
-		IdGymnase = idGymnase;
-		NomGymnase = nomGymnase;
-		Adresse = adresse;
-		Ville = ville;
-		Surface = surface;
-		this.seances = seances;
-	}
-
 	public Long getIdGymnase() {
-		return IdGymnase;
-	}
-
-	public void setIdGymnase(Long idGymnase) {
-		IdGymnase = idGymnase;
+		return idGymnase;
 	}
 
 	public String getNomGymnase() {
-		return NomGymnase;
-	}
-
-	public void setNomGymnase(String nomGymnase) {
-		NomGymnase = nomGymnase;
+		return nomGymnase;
 	}
 
 	public String getAdresse() {
-		return Adresse;
-	}
-
-	public void setAdresse(String adresse) {
-		Adresse = adresse;
+		return adresse;
 	}
 
 	public String getVille() {
-		return Ville;
+		return ville;
 	}
 
-	public void setVille(String ville) {
-		Ville = ville;
-	}
-
-	public int getSurface() {
-		return Surface;
-	}
-
-	public void setSurface(int surface) {
-		Surface = surface;
+	public Double getSurface() {
+		return surface;
 	}
 
 	public List<Seances> getSeances() {
 		return seances;
+	}
+
+	public void setIdGymnase(Long idGymnase) {
+		this.idGymnase = idGymnase;
+	}
+
+	public void setNomGymnase(String nomGymnase) {
+		this.nomGymnase = nomGymnase;
+	}
+
+	public void setAdresse(String adresse) {
+		this.adresse = adresse;
+	}
+
+	public void setVille(String ville) {
+		this.ville = ville;
+	}
+
+	public void setSurface(Double surface) {
+		this.surface = surface;
 	}
 
 	public void setSeances(List<Seances> seances) {
@@ -93,12 +92,8 @@ public class Gymnases {
 
 	@Override
 	public String toString() {
-		return "Gymnases [IdGymnase=" + IdGymnase + ", NomGymnase=" + NomGymnase + ", Adresse=" + Adresse + ", Ville="
-				+ Ville + ", Surface=" + Surface + ", seances=" + seances + "]";
+		return "Gymnases [idGymnase=" + idGymnase + ", nomGymnase=" + nomGymnase + ", adresse=" + adresse + ", ville="
+				+ ville + ", surface=" + surface + ", seances=" + seances + "]";
 	}
-	
-	
-	
-	
-	
+
 }

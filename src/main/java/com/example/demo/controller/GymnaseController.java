@@ -1,49 +1,63 @@
 package com.example.demo.controller;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-<<<<<<< HEAD:src/main/java/com/example/demo/controller/GymnaseController.java
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-=======
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
->>>>>>> 7c8acf23fab939763202189f00ee0056173ce202:src/main/java/com/example/demo/controller/VuController.java
 
-import com.example.demo.modul.Gymnases;
 import com.example.demo.repo.GymnasesRepository;
 
+@RequestMapping("gymnases")
 @Controller
 public class GymnaseController {
-	
 
 	@Autowired
 	private GymnasesRepository gymnasesRepository;
-	
-	static List<Gymnases> gm= new ArrayList<>();
-	
-<<<<<<< HEAD:src/main/java/com/example/demo/controller/GymnaseController.java
-	@GetMapping("/home")
-	public String home() {
+
+	// Page d'accueil de l'application
+	@GetMapping("/home/{id}")
+	public String home(@PathVariable("id") Long idg) {
 		return "home";
 	}
-	
-	@GetMapping("/gymnases")
+
+
+	// Liste de tous les gymnases
+	@GetMapping("/list")
 	public String getGymnaseList(Model model) {
 		model.addAttribute("gymnases", gymnasesRepository.findAll());
 		return "gymnases";
-=======
-	
-	@GetMapping("/home")
-	public String gemnasses() {
-		gm=gymnasesRepository.findAll();
-		System.out.println(gm);
-		return "home";
->>>>>>> 7c8acf23fab939763202189f00ee0056173ce202:src/main/java/com/example/demo/controller/VuController.java
 	}
-	 
+
+	// Détails d'un gymnase par idGymnase
+	@GetMapping("/{idGymnase}")
+	public String getByIdGymnase(@PathVariable("idGymnase") Long idGymnase, Model model) {
+		model.addAttribute("gymnase", gymnasesRepository.findByIdGymnase(idGymnase));
+		return "gymnaseDetails";
+	}
+
+	// Liste des gymnases par nom
+	@GetMapping("/{nomGymnase}")
+	public String getByName(@PathVariable("nomGymnase") String nomGymnase, Model model) {
+		model.addAttribute("gymnase", gymnasesRepository.findByNomGymnase(nomGymnase));
+		return "gymnaseDetails";
+	}
+	
+	// Liste des gymnases par nom
+	@GetMapping("/{adresse}")
+	public String getByAdresse(@PathVariable("adresse") String adresse, Model model) {
+		model.addAttribute("gymnases", gymnasesRepository.findByAdresse(adresse));
+		return "gymnaseDetails";
+	}
+	
+	// Liste des gymnases par nom
+//	@GetMapping("/{}")
+//	public String getListByName(@PathVariable("nomGymnase") Long nomGymnase, Model model) {
+//		model.addAttribute("gymnases", gymnasesRepository.findByIdGymnase(nomGymnase));
+//		return "gymnaseDetails";
+//	}
+	
+	
+
 }
