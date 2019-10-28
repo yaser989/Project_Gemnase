@@ -5,15 +5,14 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import com.example.demo.modul.Gymnases;
 import com.example.demo.repo.GymnasesRepository;
 
 @Controller
-public class VuController {
+public class GymnaseController {
 	
 
 	@Autowired
@@ -21,11 +20,15 @@ public class VuController {
 	
 	static List<Gymnases> gm= new ArrayList<>();
 	
-	 @ResponseBody
-	@RequestMapping("/index")
-	public String gemnasses() {
-		gm=gymnasesRepository.findAll();
-		System.out.println(gm);
-		return "index";
+	@GetMapping("/home")
+	public String home() {
+		return "home";
 	}
+	
+	@GetMapping("/gymnases")
+	public String getGymnaseList(Model model) {
+		model.addAttribute("gymnases", gymnasesRepository.findAll());
+		return "gymnases";
+	}
+	 
 }
