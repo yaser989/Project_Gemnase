@@ -51,14 +51,6 @@ public class GymnaseController {
 		model.addAttribute("gymnases", gymnasesRepository.findByAdresse(adresse));
 		return "gymnaseDetails";
 	}
-	
-	// Liste des gymnases par nom
-//	@GetMapping("/{}")
-//	public String getListByName(@PathVariable("nomGymnase") Long nomGymnase, Model model) {
-//		model.addAttribute("gymnases", gymnasesRepository.findByIdGymnase(nomGymnase));
-//		return "gymnaseDetails";
-//	}
-	
-	
+		
 
 }
