@@ -44,7 +44,7 @@ public class GymnaseController {
 		return "gymnaseDetails";
 	}
 	
-	// Liste des gymnases par nom
+	// Liste des gymnases par adresse
 	@GetMapping("/{adresse}")
 	public String getByAdresse(@PathVariable("adresse") String adresse, Model model) {
 		model.addAttribute("gymnases", gymnasesRepository.findByAdresse(adresse));

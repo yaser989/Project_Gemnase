@@ -24,8 +24,32 @@ public class SportifController {
 	}
 	
 	@GetMapping("/{id}")
-	public String getSportif(@PathVariable() Long id, Model model) {
-		model.addAttribute("sportif", sportifsRepository.findById(id));
+	public String getByIdSportif(@PathVariable() Long idSportif, Model model) {
+		model.addAttribute("sportif", sportifsRepository.findByIdSportif(idSportif));
+		return "sportifDetails";
+	}
+	
+	@GetMapping("/{nom}")
+	public String getByNom(@PathVariable() String nom, Model model) {
+		model.addAttribute("sportif", sportifsRepository.findByNom(nom));
+		return "sportifDetails";
+	}
+	
+	@GetMapping("/{prenom}")
+	public String getByPrenom(@PathVariable() String prenom, Model model) {
+		model.addAttribute("sportif", sportifsRepository.findByPrenom(prenom));
+		return "sportifDetails";
+	}
+	
+	@GetMapping("/{sexe}")
+	public String getBySexe(@PathVariable() String sexe, Model model) {
+		model.addAttribute("sportif", sportifsRepository.findBySexe(sexe));
+		return "sportifDetails";
+	}
+	
+	@GetMapping("/{age}")
+	public String getByAge(@PathVariable() String age, Model model) {
+		model.addAttribute("sportif", sportifsRepository.findByAge(age));
 		return "sportifDetails";
 	}
 }

@@ -1,86 +1,78 @@
 package com.example.demo.modul;
 
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 @Document(collection = "Seances")
 public class Seances {
 	
-	@Id
-	private Long IdSportifEntraineur;
+	@Field(value = "IdSportifEntraineur")
+	private Long idSportifEntraineur;
 	
 	@Field(value = "Jour")
-	private String Jour;
+	private String jour;
 	
 	@Field(value = "Horaire")
-	private int Horaire;
+	private int horaire;
 	
 	@Field(value = "Duree")
-	private int Duree;
+	private int duree;
 	
 	@Field(value = "Libelle")
-	private String Libelle;
-
-	public Seances() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+	private String libelle;
 
 	public Seances(Long idSportifEntraineur, String jour, int horaire, int duree, String libelle) {
 		super();
-		IdSportifEntraineur = idSportifEntraineur;
-		Jour = jour;
-		Horaire = horaire;
-		Duree = duree;
-		Libelle = libelle;
+		this.idSportifEntraineur = idSportifEntraineur;
+		this.jour = jour;
+		this.horaire = horaire;
+		this.duree = duree;
+		this.libelle = libelle;
+	}
+
+	public Seances() {
+		super();
 	}
 
 	public Long getIdSportifEntraineur() {
-		return IdSportifEntraineur;
-	}
-
-	public void setIdSportifEntraineur(Long idSportifEntraineur) {
-		IdSportifEntraineur = idSportifEntraineur;
+		return idSportifEntraineur;
 	}
 
 	public String getJour() {
-		return Jour;
-	}
-
-	public void setJour(String jour) {
-		Jour = jour;
+		return jour;
 	}
 
 	public int getHoraire() {
-		return Horaire;
-	}
-
-	public void setHoraire(int horaire) {
-		Horaire = horaire;
+		return horaire;
 	}
 
 	public int getDuree() {
-		return Duree;
-	}
-
-	public void setDuree(int duree) {
-		Duree = duree;
+		return duree;
 	}
 
 	public String getLibelle() {
-		return Libelle;
+		return libelle;
+	}
+
+	public void setIdSportifEntraineur(Long idSportifEntraineur) {
+		this.idSportifEntraineur = idSportifEntraineur;
+	}
+
+	public void setJour(String jour) {
+		this.jour = jour;
+	}
+
+	public void setHoraire(int horaire) {
+		this.horaire = horaire;
+	}
+
+	public void setDuree(int duree) {
+		this.duree = duree;
 	}
 
 	public void setLibelle(String libelle) {
-		Libelle = libelle;
+		this.libelle = libelle;
 	}
 
-	@Override
-	public String toString() {
-		return "Seances [IdSportifEntraineur=" + IdSportifEntraineur + ", Jour=" + Jour + ", Horaire=" + Horaire
-				+ ", Duree=" + Duree + ", Libelle=" + Libelle + "]";
-	}
 
-	
 }

@@ -21,8 +21,8 @@ public class Sportifs {
 	@Field(value = "Age")
 	private int age;
 	
-	@Field(value = "Sport")
-	private Sports sport;
+	@Field(value = "Sports")
+	private Sports sports;
 	
 	@Field(value = "IdSportifConseiller")
 	private Long idSportifConseiller;
@@ -39,7 +39,7 @@ public class Sportifs {
 		this.prenom = prenom;
 		this.sexe = sexe;
 		this.age = age;
-		this.sport = sport;
+		this.sports = sport;
 		this.idSportifConseiller = idSportifConseiller;
 	}
 
@@ -64,7 +64,7 @@ public class Sportifs {
 	}
 
 	public Sports getSport() {
-		return sport;
+		return sports;
 	}
 
 	public Long getIdSportifConseiller() {
@@ -92,7 +92,7 @@ public class Sportifs {
 	}
 
 	public void setSport(Sports sport) {
-		this.sport = sport;
+		this.sports = sport;
 	}
 
 	public void setIdSportifConseiller(Long idSportifConseiller) {
@@ -102,7 +102,7 @@ public class Sportifs {
 	@Override
 	public String toString() {
 		return "Sportifs [idSportif=" + idSportif + ", nom=" + nom + ", prenom=" + prenom + ", sexe=" + sexe + ", age="
-				+ age + ", sport=" + sport + ", idSportifConseiller=" + idSportifConseiller + "]";
+				+ age + ", sport=" + sports + ", idSportifConseiller=" + idSportifConseiller + "]";
 	}
 
 	
