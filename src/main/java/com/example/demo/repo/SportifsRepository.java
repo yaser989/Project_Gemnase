@@ -22,29 +22,9 @@ public interface SportifsRepository extends MongoRepository<Sportifs, String>{
 	public List <Sportifs> findBySports(Sports sports);
 
 
-	
-	
-	
-	
-//	@Field(value = "IdSportif")
-//    private Long idSportif;
-//	
-//	@Field(value = "Nom")
-//	private String nom ;
-//	
-//	@Field(value = "Prenom")
-//	private String prenom;
-//	
-//	@Field(value = "Sexe")
-//	private String sexe;
-//	
-//	@Field(value = "Age")
-//	private int age;
-//	
-//	@Field(value = "Sport")
-//	private Sports sport;
-//	
-//	@Field(value = "IdSportifConseiller")
-//	private Long idSportifConseiller;
 
+	
+	
+	
+	
 }

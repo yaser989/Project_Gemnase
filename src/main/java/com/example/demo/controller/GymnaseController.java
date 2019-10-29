@@ -1,12 +1,10 @@
 package com.example.demo.controller;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import com.example.demo.repo.GymnasesRepository;
 
 @RequestMapping("gymnases")
@@ -16,19 +14,25 @@ public class GymnaseController {
 	@Autowired
 	private GymnasesRepository gymnasesRepository;
 
+
 	// Page d'accueil de l'application
 	@GetMapping("/home")
 	public String home() {
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 		return "home";
 	}
 
 
 	// Liste de tous les gymnases
-	@GetMapping("/list")
+	@GetMapping("/gymnases")
 	public String getGymnaseList(Model model) {
 		model.addAttribute("gymnases", gymnasesRepository.findAll());
 		model.addAttribute("count", gymnasesRepository.findAll().size());
 		return "gymnases";
+
 	}
 
 	// Détails d'un gymnase par idGymnase
@@ -53,4 +57,11 @@ public class GymnaseController {
 	}
 		
 
-}
+
+
+	}
+	
+
+	 
+
+
