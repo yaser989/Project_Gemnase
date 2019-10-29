@@ -17,8 +17,8 @@ public class GymnaseController {
 	private GymnasesRepository gymnasesRepository;
 
 	// Page d'accueil de l'application
-	@GetMapping("/home/{id}")
-	public String home(@PathVariable("id") Long idg) {
+	@GetMapping("/home")
+	public String home() {
 		return "home";
 	}
 
@@ -27,6 +27,7 @@ public class GymnaseController {
 	@GetMapping("/list")
 	public String getGymnaseList(Model model) {
 		model.addAttribute("gymnases", gymnasesRepository.findAll());
+		model.addAttribute("count", gymnasesRepository.findAll().size());
 		return "gymnases";
 	}
 
