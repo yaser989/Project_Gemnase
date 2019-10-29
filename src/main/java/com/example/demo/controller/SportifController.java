@@ -23,7 +23,7 @@ public class SportifController {
 		return "sportifs";
 	}
 	
-	@GetMapping("/{id}")
+	@GetMapping("/{idSportif}")
 	public String getByIdSportif(@PathVariable() Long idSportif, Model model) {
 		model.addAttribute("sportif", sportifsRepository.findByIdSportif(idSportif));
 		return "sportifDetails";

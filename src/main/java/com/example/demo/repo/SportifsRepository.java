@@ -19,7 +19,7 @@ public interface SportifsRepository extends MongoRepository<Sportifs, String>{
 
 	public List <Sportifs> findByAge(String age);
 	
-	public List <Sportifs> findByIdSports(Sports sports);
+	public List <Sportifs> findBySports(Sports sports);
 
 
 	

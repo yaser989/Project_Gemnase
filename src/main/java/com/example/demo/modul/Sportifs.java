@@ -6,11 +6,13 @@ import org.springframework.data.mongodb.core.mapping.Field;
 @Document(collection = "Sportifs")
 public class Sportifs {
 	
-	@Field(value = "IdSportif")
-    private Long idSportif;
+
 	
 	@Field(value = "Nom")
 	private String nom ;
+	
+	@Field(value = "IdSportif")
+    private Long idSportif;
 	
 	@Field(value = "Prenom")
 	private String prenom;
