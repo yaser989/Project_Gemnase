@@ -1,53 +1,21 @@
 package com.example.demo.modul;
 
+import java.util.List;
+
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import lombok.Data;
+
+@Data
 @Document(collection = "Sports")
 public class Sports {
 	
 	@Field(value = "Jouer")
-	private String  [] jouer;
+	private List<Sports> jouer;
 	@Field(value = "Arbitrer")
-	private String  [] arbitrer;
+	private List<Sports> arbitrer;
 	@Field(value = "Entrainer")
-	private String  [] entrainer;
+	private List<Sports> entrainer;
 	
-	public Sports() {
-		super();
-	}
-
-	public String[] getJouer() {
-		return jouer;
-	}
-
-	public String[] getArbitrer() {
-		return arbitrer;
-	}
-
-	public String[] getEntrainer() {
-		return entrainer;
-	}
-
-	public void setJouer(String[] jouer) {
-		this.jouer = jouer;
-	}
-
-	public void setArbitrer(String[] arbitrer) {
-		this.arbitrer = arbitrer;
-	}
-
-	public void setEntrainer(String[] entrainer) {
-		this.entrainer = entrainer;
-	}
-
-	public Sports(String[] jouer, String[] arbitrer, String[] entrainer) {
-		super();
-		this.jouer = jouer;
-		this.arbitrer = arbitrer;
-		this.entrainer = entrainer;
-	}
-	
-
-
 }

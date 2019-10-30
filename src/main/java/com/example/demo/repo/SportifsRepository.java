@@ -17,12 +17,16 @@ public interface SportifsRepository extends MongoRepository<Sportifs, String>{
 
 	public List <Sportifs> findBySexe(String sexe);
 
-	public List <Sportifs> findByAge(String age);
+	public List <Sportifs> findByAge(int age);
 	
 	public List <Sportifs> findBySports(Sports sports);
 
 
 	
+	public List <Sportifs> findByAgeGreaterThan(int age);
+	public List <Sportifs> findByAgeLessThan(int age);
+	public List <Sportifs> findByAgeBetween(int from, int to);
+
 	
 	
 	

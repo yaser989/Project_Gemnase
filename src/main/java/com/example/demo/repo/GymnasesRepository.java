@@ -17,6 +17,9 @@ public interface GymnasesRepository extends MongoRepository<Gymnases, String> {
 	public List<Gymnases> findByVille(String Ville);
 
 	public List<Gymnases> findBySurface(Double Surface);
+	
+	public List <Gymnases> findBySurfaceBetween(Double from, Double to);
+
 
 //	@Id
 //	@Field(value = "IdGymnase")
